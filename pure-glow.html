@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="categories.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+</head>
+
+<body>
+
+    <!-- nav bar -->
+
+    <header class="header">
+        <nav class="navigation">
+            <a href="index.html" class="logo">
+                <img src="PureGlow logo (1).png" alt="Logo">
+            </a>
+            <input type="checkbox" id="menu-btn" class="menu-btn">
+            <label for="menu-btn" class="menu-icon"><i class="fa-solid fa-bars"></i></label>
+
+
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pure-glow.html">Categories</a></li>
+                <li><a href="footer.html">About Us</a></li>
+            </ul>
+            <form class="search-box">
+                <input type="text" placeholder="Search Product" required />
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+            <div class="nav-btns">
+                <a href="pro.html" class="nav-user"><i class="fa-regular fa-user"></i></a>
+                <a href="#" class="nav-cart"><i class="fa-solid fa-cart-arrow-down"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <button id="clear-cart">Clear the basket</button>
+
+            </div>
+        </nav>
+    </header>
+
+    <section class="products-section shop-by-category">
+        <h2 class="section-title">Shop By Categories</h2>
+
+        <div class="products">
+            <a href="glow-world.html" class="category-box">
+                <img src="photo_2026-05-04_22-19-23.jpg" alt="Glow World">
+                <div class="category-overlay">
+                    <span>Glow World</span>
+                </div>
+            </a>
+            <a href="beauty-studio.html" class="category-box">
+                <img src="photo_2026-05-04_22-19-31.jpg" alt="Beauty Studio">
+                <div class="category-overlay">
+                    <span>Beauty Studio</span>
+                </div>
+            </a>
+            <a href="glow-sets.html" class="category-box">
+                <img src="photo_2026-05-04_22-19-05.jpg" alt="Glow Sets">
+                <div class="category-overlay">
+                    <span>Glow sets</span>
+                </div>
+            </a>
+            <a href="nails-care.html" class="category-box">
+                <img src="photo_2026-05-04_22-18-57.jpg" alt="Nails Care">
+                <div class="category-overlay">
+                    <span>Nails Care</span>
+                </div>
+            </a>
+            <a href="best-sellers.html" class="category-box">
+                <img src="photo_2026-05-04_22-19-18.jpg" alt="Best Sellers">
+                <div class="category-overlay">
+                    <span>Best Sellers</span>
+                </div>
+            </a>
+        </div>
+    </section>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

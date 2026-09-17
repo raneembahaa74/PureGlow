@@ -1,0 +1,104 @@
+:root {
+    --main-pink: #fce4ec;
+    --gold: #d4af37;
+    --bg-light: #fffafb;
+    --champagne: #FBEAD6;
+}
+
+body {
+    background-color: var(--champagne);
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    gap: 50px;
+}
+
+.product-image {
+    overflow: hidden;
+    border-radius: 20px;
+    max-width: 450px;
+    box-shadow: 0 10px 30px rgba(200, 125, 135, 0.5);
+}
+
+.product-image img {
+    max-width: 450px;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(200, 125, 135, 1.0);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    display: block;
+}
+
+.product-image:hover img {
+    transform: scale(1.1);
+}
+
+.product-details {
+    max-width: 500px;
+}
+
+.product-details h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.price {
+    font-size: 2rem;
+    color: var(--gold);
+    font-weight: bold;
+}
+.btn-outline {
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #6B7556, #8da06b); 
+    border-radius: 50px;
+    border: none;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(107, 117, 86, 0.3);
+    display: inline-block;
+}
+
+.btn-outline:hover {
+    background: linear-gradient(135deg, #8da06b, #6B7556);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(107, 117, 86, 0.5);
+}
+.btn-primary-glow {
+    background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+    border: none;
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-primary-glow:hover {
+    background: linear-gradient(135deg, #f8bbd0, #fce4ec);
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.7);
+    transform: translateY(-3px);
+}
+
+
+@media (max-width: 768px) {
+    .product-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .product-details h1 {
+        font-size: 1.8rem;
+    }
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pure Glow | Profile</title>
+    <link rel="stylesheet" href="prostyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body>
+     <!-- nav bar -->
+
+    <header class="header">
+        <nav class="navigation">
+            <a href="index.html" class="logo">
+                <img src="PureGlow logo (1).png" alt="Logo">
+            </a>
+            <input type="checkbox" id="menu-btn" class="menu-btn">
+            <label for="menu-btn" class="menu-icon"><i class="fa-solid fa-bars"></i></label>
+
+
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pure-glow.html">Categories</a></li>
+                <li><a href="footer.html">About Us</a></li>
+            </ul>
+            <form class="search-box"id="search-form">
+                <input type="text"id="search-input" placeholder="Search Product" required />
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+            <div class="nav-btns">
+                <a href="pro.html" class="nav-user"><i class="fa-regular fa-user"></i></a>
+                <a href="#" class="nav-cart"><i class="fa-solid fa-cart-arrow-down"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <button id="clear-cart">Clear the basket</button>
+
+            </div>
+        </nav>
+    </header>
+<main class="main-profile-content">
+<div class="profile-container">
+    <h1 class="profile-title">Pure <span>Glow</span></h1>
+    <p class="profile-text">Your beauty profile ✨</p>
+
+    <div class="image-box">
+        <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" id="profileImage">
+    </div>
+
+    <div class="upload-btn">
+        <input type="file" id="uploadImage" accept="image/*">
+        <label for="uploadImage">Upload Photo</label>
+    </div>
+
+    <div class="info-box">
+        <h3>Username</h3>
+        <p id="userNameDisplay">Loading...</p>
+
+        <h3>Email</h3>
+        <p id="userEmailDisplay">Loading...</p>
+    </div>
+
+    <button class="save-btn">Save Profile</button>
+</div>
+</main>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    
+    const storedName = localStorage.getItem('userName');
+    const storedEmail = localStorage.getItem('userEmail');
+    const storedImage = localStorage.getItem('profileImage');
+
+    const nameDisplay = document.getElementById('userNameDisplay');
+    const emailDisplay = document.getElementById('userEmailDisplay');
+    const profileImg = document.getElementById('profileImage');
+
+    
+    if (storedName) {
+        nameDisplay.textContent = storedName;
+    } else {
+        nameDisplay.textContent = "Guest User";
+    }
+
+    if (storedEmail) {
+        emailDisplay.textContent = storedEmail;
+    } else {
+        emailDisplay.textContent = "No Email Provided";
+    }
+
+    if (storedImage) {
+        profileImg.src = storedImage;
+    }
+});
+
+const uploadImage = document.getElementById('uploadImage');
+const profileImage = document.getElementById('profileImage');
+
+uploadImage.addEventListener('change', function(){
+    const file = this.files[0];
+    if(file){
+        const reader = new FileReader();
+        reader.onload = function(e){
+            const result = e.target.result;
+            profileImage.src = result;
+            localStorage.setItem('profileImage', result);
+        }
+        reader.readAsDataURL(file);
+    }
+});
+
+document.querySelector('.save-btn').addEventListener('click', () => {
+    alert('Your profile has been updated successfully! ✨');
+});
+</script>
+
+</body>
+</html>
